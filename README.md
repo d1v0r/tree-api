@@ -34,7 +34,7 @@ RESTful API za upravljanje hijerarhijskim podacima s Web sučeljem za vizualno u
 
 ### 1. Kloniranje projekta
 ```bash
-git clone <repository-url>
+git clone https://github.com/d1v0r/tree-api.git
 cd tree-api/pincode-projekt
 ```
 
