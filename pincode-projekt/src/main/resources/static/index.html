@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Tree Editor</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Pinecode - Location Tree Editor</h1>
+
+        <div class="controls">
+            <button class="reload-btn" onclick="loadTree()" title="Reload">Reload</button>
+            <button class="add-node-btn" onclick="showCreateForm()" title="Add Root Node">Add Node</button>
+        </div>
+
+        <div id="form">
+            <h3>Create New Node</h3>
+            <input type="text" id="title" placeholder="Node title" style="margin-right: 10px;">
+            <input type="number" id="parentId" placeholder="Parent ID (optional)" style="margin-right: 10px;">
+            <button onclick="createNode()" class="add-node-btn">Create</button>
+            <button onclick="hideCreateForm()" style="background: #cbd5e0; color: #2d3748;">Cancel</button>
+        </div>
+
+        <div id="editForm">
+            <h3>Edit Node</h3>
+            <input type="text" id="editTitle" placeholder="Node title" style="margin-right: 10px;">
+            <button onclick="updateNode()" class="add-node-btn">Save</button>
+            <button onclick="hideEditForm()" style="background: #cbd5e0; color: #2d3748;">Cancel</button>
+        </div>
+
+        <div id="tree"></div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

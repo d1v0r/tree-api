@@ -1,0 +1,250 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
+    padding: 30px;
+    background: #f5f7fa;
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+h1 {
+    color: #1a202c;
+    margin-bottom: 30px;
+    text-align: center;
+    font-size: 2em;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+}
+
+.reload-btn {
+    background: #4a5568;
+    color: white;
+}
+
+.reload-btn:hover {
+    background: #2d3748;
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.add-node-btn {
+    background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+    color: white;
+}
+
+.add-node-btn:hover {
+    background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#form {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #4a5568;
+    margin-bottom: 30px;
+    display: none;
+}
+
+#form h3 {
+    margin-bottom: 15px;
+    color: #1a202c;
+    font-size: 1em;
+}
+
+#form input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#form input:focus {
+    outline: none;
+    border-color: #4a5568;
+    box-shadow: 0 0 0 3px rgba(74, 85, 104, 0.1);
+}
+
+#editForm {
+    background: #f9fafb;
+    padding: 20px;
+    border-radius: 6px;
+    border-left: 4px solid #3182ce;
+    margin-bottom: 30px;
+    display: none;
+}
+
+#editForm h3 {
+    margin-bottom: 15px;
+    color: #1a202c;
+    font-size: 1em;
+}
+
+#editForm input {
+    padding: 10px;
+    margin-right: 10px;
+    border: 1px solid #cbd5e0;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+#editForm input:focus {
+    outline: none;
+    border-color: #3182ce;
+    box-shadow: 0 0 0 3px rgba(49, 130, 206, 0.1);
+}
+
+#tree {
+    background: #fafbfc;
+    padding: 20px;
+    border-radius: 6px;
+    border: 1px solid #e2e8f0;
+}
+
+ul {
+    list-style: none;
+    padding-left: 40px;
+    margin-top: 15px;
+    position: relative;
+}
+
+ul:not(.root-ul)::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background: #cbd5e0;
+}
+
+li {
+    margin: 8px 0;
+    position: relative;
+    padding-left: 20px;
+}
+
+li.root-node {
+    padding-left: 0;
+}
+
+li::before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 20px;
+    width: 20px;
+    height: 1px;
+    background: #cbd5e0;
+}
+
+li.root-node::before {
+    display: none;
+}
+
+.node-label {
+    display: inline-block;
+    background: white;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid #e2e8f0;
+    font-weight: 500;
+    color: #2d3748;
+    margin-right: 10px;
+    min-width: 120px;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+li:hover .node-label {
+    background: #f7fafc;
+    border-color: #a0aec0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.node-buttons {
+    display: inline-flex;
+    gap: 5px;
+    flex-wrap: wrap;
+}
+
+.node-btn {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 500;
+    transition: all 0.2s ease;
+    color: white;
+}
+
+.delete-btn {
+    background: linear-gradient(135deg, #1a365d 0%, #0f2438 100%);
+}
+
+.delete-btn:hover {
+    background: linear-gradient(135deg, #0f2438 0%, #051e3e 100%);
+    transform: translateY(-1px);
+}
+
+.add-child-btn {
+    background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+}
+
+.add-child-btn:hover {
+    background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+    transform: translateY(-1px);
+}
+
+.move-btn {
+    background: linear-gradient(135deg, #3182ce 0%, #2c5282 100%);
+}
+
+.move-btn:hover {
+    background: linear-gradient(135deg, #2c5282 0%, #1a365d 100%);
+    transform: translateY(-1px);
+}
+
+.reorder-btn {
+    background: linear-gradient(135deg, #90cdf4 0%, #63b3ed 100%);
+    color: #1a202c;
+}
+
+.reorder-btn:hover {
+    background: linear-gradient(135deg, #63b3ed 0%, #4299e1 100%);
+    color: #1a202c;
+    transform: translateY(-1px);
+}
