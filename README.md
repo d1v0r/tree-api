@@ -157,11 +157,15 @@ Moguće vrijednosti: `UP` ili `DOWN`
 ## Frontend
 
 ### Buttons
-Delete - za brisanje čvora (Nije moguće obrisati korijenski - javit će se pop up s porukom)
-Add Child - Dodaje node za navedeni parent node
-Change Parent - Moguće je naknadno promjeniti parent node 
-Reorder - Moguće je promjeniti redoslijed child nodova.
-Reload - osvježavanje
+**Delete** - za brisanje čvora (Nije moguće obrisati korijenski - javit će se pop up s porukom)
+
+**Add Child** - Dodaje node za navedeni parent node
+
+**Change Parent** - Moguće je naknadno promjeniti parent node 
+
+**Reorder** - Moguće je promjeniti redoslijed child nodova.
+
+**Reload** - osvježavanje
 
 ### Forma za Stvaranje
 - Input polje za naslov čvora
