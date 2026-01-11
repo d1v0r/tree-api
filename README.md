@@ -1,4 +1,4 @@
-# Tree API - Location Tree Editor
+# Tree API
 
 RESTful API za upravljanje hijerarhijskim podacima s Web sučeljem za vizualno uređivanje stabla lokacija.
 
