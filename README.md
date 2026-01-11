@@ -186,3 +186,85 @@ public class LocationNode {
     private Integer sortOrder;
 }
 ```
+# Opis pristupa bazi podataka
+
+## 1. Dohvat korijenskih elemenata
+Dohvati sve čvorove koji nemaju roditelja.
+
+**Pseudo-kod:**
+```
+function getRootNodes():
+    return all nodes where parent_id is null
+```
+
+**Standard SQL:**
+```
+SELECT id, title, parent_id
+FROM location_node
+WHERE parent_id IS NULL;
+```
+
+## 2. Dohvat djece određenog čvora
+Dohvati sve čvorove čiji je `parent_id` jednak ID-u traženog roditelja.
+
+**Pseudo-kod:**
+```
+function getChildren(parentId):
+    return all nodes where parent_id equals parentId
+```
+
+**Standard SQL:**
+```
+SELECT id, title, parent_id
+FROM location_node
+WHERE parent_id = ?;
+```
+
+## 3. Unos novog čvora
+Spremi novi zapis u tablicu s referencom na roditelja.
+
+**Pseudo-kod:**
+```
+function createNode(title, parentId):
+    validate code is unique
+    insert new node with given values
+```
+
+**Standard SQL:**
+INSERT INTO location_node (title, parent_id)
+VALUES (:title, :parent_id);
+
+## 4. Premještanje čvora
+Ažuriraj `parent_id` ciljanog čvora na novi ID.
+
+**Pseudo-kod:**
+```
+function moveNode(nodeId, newParentId):
+    find node by id
+    update parent_id to newParentId
+```
+
+**Standard SQL:**
+```
+UPDATE location_node
+SET parent_id = ?
+WHERE id = ?;
+```
+
+## 5. Izmjena čvora
+Ažuriraj naziv ciljanog čvora
+**Pseudo-kod:**
+```
+function updateNode(nodeId, newTitle):
+    find node by id
+    update node values
+    save node
+```
+
+**Standard SQL:**
+```
+UPDATE location_node
+SET code = ?, description = ?
+WHERE id = ?;
+```
+
